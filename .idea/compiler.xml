@@ -2,23 +2,30 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hahamall-member" />
+        <module name="hahamall-common" />
         <module name="hahamall-product" />
         <module name="hahamall-order" />
+        <module name="renren-fast" />
         <module name="hahamall-coupon" />
         <module name="hahamall-ware" />
+        <module name="renren-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hahamall-common" target="1.8" />
       <module name="hahamall-coupon" target="1.8" />
       <module name="hahamall-member" target="1.8" />
       <module name="hahamall-order" target="1.8" />
       <module name="hahamall-product" target="1.8" />
       <module name="hahamall-ware" target="1.8" />
+      <module name="renren-fast" target="1.8" />
+      <module name="renren-generator" target="1.8" />
       <module name="zsc_project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -29,6 +36,8 @@
       <module name="hahamall-order" options="-parameters" />
       <module name="hahamall-product" options="-parameters" />
       <module name="hahamall-ware" options="-parameters" />
+      <module name="renren-fast" options="-parameters" />
+      <module name="renren-generator" options="-parameters" />
     </option>
   </component>
 </project>
