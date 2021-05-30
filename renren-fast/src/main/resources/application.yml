@@ -4,8 +4,9 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     min-spare-threads: 30
+    connection-timeout: 5000ms
   port: 8080
-  connection-timeout: 5000ms
+#  connection-timeout: 5000ms
   servlet:
     context-path: /renren-fast
 
@@ -35,8 +36,16 @@ spring:
         max-wait: -1ms      # 连接池最大阻塞等待时间（使用负值表示没有限制）
         max-idle: 10      # 连接池中的最大空闲连接
         min-idle: 5       # 连接池中的最小空闲连接
+
+#  配置application -name是为了让其加入到配置中心 和 nacos-server-addr是为了让其找到注册中心地址
   mvc:
     throw-exception-if-no-handler-found: true
+  application:
+    name: renren-fast  # 意思是把renren-fast项目也注册到nacos中(后面不再强调了)，这样网关才能转发给
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 #  resources:
 #    add-mappings: false
 

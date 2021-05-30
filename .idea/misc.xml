@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/hahamall-common/pom.xml" />
         <option value="$PROJECT_DIR$/renren-generator/pom.xml" />
         <option value="$PROJECT_DIR$/hahamall-member/pom.xml" />
+        <option value="$PROJECT_DIR$/hahamall-gateway/pom.xml" />
       </list>
     </option>
   </component>

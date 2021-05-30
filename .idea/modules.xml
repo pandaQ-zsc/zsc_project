@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/hahamall-common/hahamall-common.iml" filepath="$PROJECT_DIR$/hahamall-common/hahamall-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-coupon/hahamall-coupon.iml" filepath="$PROJECT_DIR$/hahamall-coupon/hahamall-coupon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hahamall-gateway/hahamall-gateway.iml" filepath="$PROJECT_DIR$/hahamall-gateway/hahamall-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-member/hahamall-member.iml" filepath="$PROJECT_DIR$/hahamall-member/hahamall-member.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-order/hahamall-order.iml" filepath="$PROJECT_DIR$/hahamall-order/hahamall-order.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-product/hahamall-product.iml" filepath="$PROJECT_DIR$/hahamall-product/hahamall-product.iml" />
