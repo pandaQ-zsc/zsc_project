@@ -17,7 +17,7 @@ public class HahamallCorsConfiguration extends CorsConfiguration {
         corsConfiguration.addAllowedMethod("*");
 //        corsConfiguration.addAllowedOrigin("*");
         //springboot2.4版本以上需要更改成下面样子
-        corsConfiguration.addAllowedOriginPattern("*");
+        corsConfiguration.addAllowedOrigin("*");
         corsConfiguration.setAllowCredentials(true);
 
         source.registerCorsConfiguration("/**",corsConfiguration);

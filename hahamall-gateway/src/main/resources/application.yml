@@ -11,21 +11,29 @@ spring:
           predicates:
             - Query=url,qq
     #lb代表 负载均衡  loadBalance   只要请求有api前缀的请求，默认路由到负载均衡renren-fast
-    #自定义规则：前端的项目,/api前缀
+    #自定义规则：前端的项目,/api前缀     uri 表示负载均衡到xx个服务
+
 
         - id: product_route
           uri: lb://hahamall-product
           predicates:
             - Path=/api/product/**
           filters:
-            - RewritePath=/api/?(?<segment>.*), /$\{segment}
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: third_route
+          uri: lb://hahamall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
 
         - id: admin_route
           uri: lb://renren-fast
           predicates:
             - Path=/api/**
           filters:
-            - RewritePath=/api/?(?<segment>.*), /renren-fast/$\{segment}
+            - RewritePath=/api/(?<segment>.*),/renren-fast/$\{segment}
 #            - RewritePath=/red/?(?<segment>.*), /$\{segment}
 #http://localhost:88/api/captcha.jpg   --> http://renren-fast:8080/api/captcha.jpg
 #但是实际上需要转化成  http://localhost:8080/renren-fast/captcha.jpg  因此需要添加【filters】去重写路径

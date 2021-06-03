@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+    alicloud:
+      access-key: LTAI5tFJb89A4yKKZZNq558U
+      secret-key: Q0w76qD0JayUKRgTZlf6asAyGFUGHV
+      oss:
+        endpoint: oss-cn-shenzhen.aliyuncs.com
+        bucket: hahamall-hello
+  application:
+    name: hahamall-third-party
+
+server:
+  port: 30000
