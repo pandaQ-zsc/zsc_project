@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -63,11 +65,30 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 
     @Override
     public void removeMenuByIds(List<Long> asList) {
-        //TODO: 1、检查当前删除的菜单，是否被别的地方引用
+        // 1、检查当前删除的菜单，是否被别的地方引用
 
         //这个删除如果不配逻辑删除就是是直接删除 相当于物理删除 会造成数据库中的数据删除
         //配了逻辑删除  logic-delete-value后则可以自定义状态
         baseMapper.deleteBatchIds(asList);
+    }
+
+
+    //[2,25,225]
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        List<Long> paths= new ArrayList<>();
+        List<Long> parentPath = findParentPath(catelogId, paths);
+        Collections.reverse(parentPath);
+        return parentPath.toArray(new Long[parentPath.size()]);
+    }
+    private List<Long> findParentPath(Long catelogId, List<Long> paths){
+        //收集当前节点id
+        paths.add(catelogId);
+        CategoryEntity byId = this.getById(catelogId);
+        if(byId.getParentCid()!=0){
+            findParentPath(byId.getParentCid(),paths);
+        }
+        return paths;
     }
 
     //从all菜单中里面找到root菜单

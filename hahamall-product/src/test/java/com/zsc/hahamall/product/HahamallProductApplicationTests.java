@@ -3,16 +3,33 @@ package com.zsc.hahamall.product;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zsc.hahamall.product.entity.BrandEntity;
 import com.zsc.hahamall.product.service.BrandService;
+import com.zsc.hahamall.product.service.CategoryService;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.List;
-
+@Slf4j
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class HahamallProductApplicationTests {
     @Autowired
     BrandService brandService;
+
+    @Autowired
+    CategoryService categoryService;
+
+    @Test
+    public void testFindPath(){
+        Long[] catelogPath = categoryService.findCatelogPath(225L);
+        log.info("完整路径：{}", Arrays.asList(catelogPath));
+    }
+
+
 //    @Autowired
 //    OSSClient ossClient;
 //    @Test
@@ -45,7 +62,7 @@ public class HahamallProductApplicationTests {
 //    }
 
     @Test
-    void contextLoads() {
+  public   void contextLoads() {
         BrandEntity brandEntity = new BrandEntity();
         brandEntity.setBrandId(1l);
         brandEntity.setDescript("华为！");
