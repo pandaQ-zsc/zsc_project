@@ -1,15 +1,16 @@
 package com.zsc.hahamall.product.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.zsc.hahamall.product.entity.AttrEntity;
+import com.zsc.hahamall.product.service.AttrAttrgroupRelationService;
+import com.zsc.hahamall.product.service.AttrService;
 import com.zsc.hahamall.product.service.CategoryService;
+import com.zsc.hahamall.product.vo.AttrGroupRelationVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.zsc.hahamall.product.entity.AttrGroupEntity;
 import com.zsc.hahamall.product.service.AttrGroupService;
@@ -31,6 +32,57 @@ public class AttrGroupController {
     private AttrGroupService attrGroupService;
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    AttrService attrService;
+    @Autowired
+    AttrAttrgroupRelationService relationService;
+
+    ///product/attrgroup/attr/relation
+
+    /**
+     * [{
+     *   "attrGroupId": 0, //分组id
+     *   "attrId": 0, //属性id
+     * }]
+     */
+    @PostMapping("/attr/relation")
+    public R addRelation(@RequestBody List<AttrGroupRelationVo> vos){
+        relationService.saveBatch(vos);
+        return R.ok();
+
+    }
+
+    // /product/attrgroup/{attrgroupId}/attr/relation    ---查询attr关联的属性
+    @GetMapping("/{attrgroupId}/attr/relation")
+    public R attrRelation(@PathVariable("attrgroupId") Long attrgroupId){
+        List <AttrEntity>entities = attrService.getRelationAttr(attrgroupId);
+        return  R.ok().put("data",entities);
+    }
+
+    ///product/attrgroup/{attrgroupId}/noattr/relation   --查询attr没有关联的属性
+    //   @RequestParam Map<String, Object> params  分页参数的所有信息
+    //   @RequestParam用于获取查询参数。
+    @GetMapping("/{attrgroupId}/noattr/relation")
+    public R attrNoRelation(@PathVariable("attrgroupId") Long attrgroupId,
+                            @RequestParam Map<String, Object> params) {
+        //由于接口文档的响应数据 因此 需要返回PageUtils格式的数据
+        PageUtils page = attrService.getNoRelationAttr(params,attrgroupId);
+        //接口文档中page:{}
+        return R.ok().put("page", page);
+
+    }
+
+
+
+    ///product/attrgroup/attr/relation/delete
+    //[{"attrId":1,"attrGroupId":2}]
+    @PostMapping("/attr/relation/delete")
+    // 【以为post请求会携带来json的数据因此需要在参数系列表中使用@RequestBody 才能接受到post请求的数据  】
+    public R deleteRelation(@RequestBody AttrGroupRelationVo[] vos){
+        attrService.deleteRelation(vos);
+        return  R.ok();
+    }
 
     /**
      * 列表

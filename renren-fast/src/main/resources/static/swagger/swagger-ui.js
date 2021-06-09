@@ -6337,7 +6337,7 @@ SwaggerSpecConverter.prototype.parameters = function(operation, obj) {
 
       if(existingParameter.allowableValues) {
         var av = existingParameter.allowableValues;
-        if(av.valueType === 'LIST') {
+        if(av.pe === 'LIST') {
           parameter['enum'] = av.values;
         }
       }
