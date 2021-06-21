@@ -2,8 +2,10 @@ package com.zsc.hahamall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zsc.common.utils.PageUtils;
+import com.zsc.hahamall.product.entity.BrandEntity;
 import com.zsc.hahamall.product.entity.CategoryBrandRelationEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,5 +24,8 @@ public interface CategoryBrandRelationService extends IService<CategoryBrandRela
     void updateBrand(Long brandId, String name);
 
     void updateCategory(Long catId, String name);
+
+    List<BrandEntity> getBrandByCatId(Long catId);
+
 }
 
