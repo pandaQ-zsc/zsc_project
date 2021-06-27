@@ -27,7 +27,7 @@ public class WareConstant {
         ASSIGNED(1,"已分配"),
         BUYING(2,"正在采购"),
         FINISH(3,"已完成"),
-        HASERROR(4,"采购失败");
+        HASERROR(4,"");
         private int code;
         private String msg;
 
