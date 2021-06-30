@@ -8,6 +8,9 @@
 
 package com.zsc.common.utils;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
@@ -20,7 +23,21 @@ import java.util.Map;
  */
 public class R extends HashMap<String, Object> {
 	private static final long serialVersionUID = 1L;
-	
+
+	public R setData(Object data){
+		put("data",data);
+		return this;
+
+	}
+	//利用fastjson进行逆转
+	public <T>T getData(TypeReference<T> typeReference){
+		Object data = get("data"); //默认是map类型  需要转化成json类型
+		String s = JSON.toJSONString(data);
+		//转化成指定的类型
+		T t = JSON.parseObject(s, typeReference);
+		return t;
+	}
+
 	public R() {
 		put("code", 0);
 		put("msg", "success");
