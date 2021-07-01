@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/hahamall-auth-server/hahamall-auth-server.iml" filepath="$PROJECT_DIR$/hahamall-auth-server/hahamall-auth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-common/hahamall-common.iml" filepath="$PROJECT_DIR$/hahamall-common/hahamall-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-coupon/hahamall-coupon.iml" filepath="$PROJECT_DIR$/hahamall-coupon/hahamall-coupon.iml" />
       <module fileurl="file://$PROJECT_DIR$/hahamall-gateway/hahamall-gateway.iml" filepath="$PROJECT_DIR$/hahamall-gateway/hahamall-gateway.iml" />

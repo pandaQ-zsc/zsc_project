@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/hahamall-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/hahamall-third-party/pom.xml" />
         <option value="$PROJECT_DIR$/hahamall-search/pom.xml" />
+        <option value="$PROJECT_DIR$/hahamall-auth-server/pom.xml" />
       </list>
     </option>
   </component>

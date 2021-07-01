@@ -17,10 +17,12 @@
         <module name="renren-fast" />
         <module name="hahamall-coupon" />
         <module name="hahamall-ware" />
+        <module name="hahamall-auth-server" />
         <module name="renren-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="hahamall-auth-server" target="1.8" />
       <module name="hahamall-common" target="1.8" />
       <module name="hahamall-coupon" target="1.8" />
       <module name="hahamall-gateway" target="1.8" />
@@ -38,6 +40,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hahamall-auth-server" options="-parameters" />
       <module name="hahamall-common" options="" />
       <module name="hahamall-coupon" options="-parameters" />
       <module name="hahamall-gateway" options="-parameters" />

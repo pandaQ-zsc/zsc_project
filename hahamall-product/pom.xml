@@ -76,6 +76,21 @@
 			<version>3.3.1</version>
 			<scope>compile</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>io.lettuce</groupId>
+					<artifactId>lettuce-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
 <!--		sdk导入需要配置  直接导入starter到common的pom.xml中-->
 <!--		<dependency>-->
 <!--			<groupId>com.aliyun.oss</groupId>-->
