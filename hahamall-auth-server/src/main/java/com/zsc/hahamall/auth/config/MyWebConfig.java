@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * <p>Title: MyWebConfig</p>
  * Description：页面映射
- * date：2020/6/25 13:36
+ * date：2021/6/25 13:36
  */
 @Configuration
 public class MyWebConfig implements WebMvcConfigurer {

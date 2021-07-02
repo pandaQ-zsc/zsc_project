@@ -10,7 +10,7 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 /**
  * <p>Title: hahamallSessionConfig</p>
  * Description：设置Session作用域、自定义cookie序列化机制
- * date：2020/6/26 21:44
+ * date：2021/6/256 21:44
  */
 @Configuration
 //public class hahamallSessionConfig {

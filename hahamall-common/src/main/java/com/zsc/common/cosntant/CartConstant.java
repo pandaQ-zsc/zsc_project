@@ -3,7 +3,7 @@ package com.zsc.common.cosntant;
 /**
  * <p>Title: CartConstant</p>
  * Description：
- * date：2020/6/27 22:37
+ * date：2021/6/257 22:37
  */
 public class CartConstant {
 

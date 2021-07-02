@@ -9,7 +9,7 @@ import javax.validation.constraints.Pattern;
 /**
  * <p>Title: UserRegisterVo</p>
  * Description：
- * date：2020/6/25 17:09
+ * date：2021/6/25 17:09
  */
 @Data
 public class UserRegisterVo {
