@@ -7,6 +7,8 @@ import com.zsc.hahamall.product.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.redisson.Redisson;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -29,6 +31,14 @@ public class HahamallProductApplicationTests {
 
     @Autowired
     StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    RedissonClient redisson;
+
+    @Test
+    public void redisson(){
+        System.out.println(redisson);
+    }
 
     @Test
     public void testStringRedisTemplate(){

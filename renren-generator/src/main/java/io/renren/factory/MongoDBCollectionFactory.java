@@ -41,7 +41,7 @@ public class MongoDBCollectionFactory {
     /***
      * 通过表名获得查询对象
      * @author gxz
-     * @date  2020/5/9
+     * @date  2021/5/9
      * @param collectionName mongo的集合名(表名)
      * @return 连接查询对象
      **/
@@ -53,7 +53,7 @@ public class MongoDBCollectionFactory {
      * 获得当前数据库的集合名称
      * 注: mongo相对关系型数据库较为特殊，查询表名无法分页，用stream实现
      * @author gxz
-     * @date  2020/5/9
+     * @date  2021/5/9
      * @param map 这是查询条件 和关系型数据库一致
      * @return 集合名称
      **/
@@ -71,7 +71,7 @@ public class MongoDBCollectionFactory {
     /***
      * 获得集合名称总数(表的数量) 为了适配MyBatisPlus的分页插件 提供方法
      * @author gxz
-     * @date  2020/5/9
+     * @date  2021/5/9
      * @param map 这是查询条件 和关系型数据库一致
      * @return int
      **/

@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * 
  * @author firenay
  * @email 1046762075@qq.com
- * @date 2020-05-30 00:49:16
+ * @date 2021-05-30 00:49:16
  */
 @Data
 @TableName("ums_member_level")

@@ -11,7 +11,7 @@ import java.util.Map;
  * 但是mongo一张表可能需要多个实体类  所以单独用一个bean封装
  *
  * @author gxz
- * @date 2020/5/10 0:14
+ * @date 2021/5/10 0:14
  */
 public class MongoGeneratorEntity {
     /***表信息**/

@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * <p>Title: OrderFeignService</p>
  * Description：
- * date：2020/7/4 23:43
+ * date：2021/7/4 23:43
  */
 @FeignClient("mall-order")
 public interface OrderFeignService {

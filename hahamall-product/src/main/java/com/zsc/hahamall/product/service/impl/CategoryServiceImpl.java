@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.zsc.hahamall.product.service.CategoryBrandRelationService;
 import com.zsc.hahamall.product.vo.Catalog2Vo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
@@ -102,7 +103,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         this.updateById(category);
         categoryBrandRelationService.updateCategory(category.getCatId(), category.getName());
     }
-
+    @Cacheable("category")
     @Override
     public List<CategoryEntity> getLevel1Categories() {
         List<CategoryEntity> categoryEntities = baseMapper.selectList(new QueryWrapper<CategoryEntity>().eq("parent_cid", 0));
@@ -132,6 +133,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
 //            redisTemplate.opsForValue().set("catalogJSON", s, 1, TimeUnit.DAYS);
             return catalogJsonFromDb;
         }
+        // 走到这里说明缓存中有数据 直接拿出Json数据转化成响应的对象
         // 拿出来的是json字符串 还需要逆转成能用的对象类数据【序列化与反序列化】  、TypeReference是protected类型因此需要使用匿名内部类的形式创建出来传入。
         Map<String, List<Catalog2Vo>> result = JSON.parseObject(catalogJSON, new TypeReference<Map<String, List<Catalog2Vo>>>() {
         });

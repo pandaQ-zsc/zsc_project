@@ -1,3 +1,4 @@
+ipAddr: 192.168.184.132
 spring:
   datasource:
     username: root
@@ -17,6 +18,17 @@ spring:
     cache: false
   redis:
     host: 192.168.184.132
+  #   设置缓存类型
+  cache:
+    type: redis
+    #   设置存活时间
+    redis:
+      time-to-live: 3600000
+      #      如果指定了前缀就用我们指定的 如果没有就用缓存的名字作为前缀
+      #      key-prefix: CACHE_
+      #      是否缓存空值
+      cache-null-values: true
+#    cache-names:
 mybatis-plus:
 # mapper文件夹下任意路径下的所有.xml
   mapper-locations: classpath*:/mapper/**/*.xml
