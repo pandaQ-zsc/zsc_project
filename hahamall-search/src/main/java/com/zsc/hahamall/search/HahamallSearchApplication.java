@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-public class HahamallSearchApplication {
+public class  HahamallSearchApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HahamallSearchApplication.class, args);

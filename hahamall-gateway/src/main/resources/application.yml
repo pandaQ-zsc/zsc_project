@@ -20,12 +20,19 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
-        - id: third_route
-          uri: lb://hahamall-third-party
+        - id: counpon_route
+          uri: lb://hahamall-coupon
           predicates:
             - Path=/api/thirdparty/**
           filters:
             - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
+        - id: third_route
+          uri: lb://hahamall-third-party
+          predicates:
+            - Path=/api/counpon/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
 
         - id: member_route
           uri: lb://hahamall-member
@@ -40,7 +47,6 @@ spring:
             - Path=/api/ware/**
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
-
 
         - id: admin_route
           uri: lb://renren-fast

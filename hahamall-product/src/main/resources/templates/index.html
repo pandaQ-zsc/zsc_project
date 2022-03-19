@@ -43,7 +43,7 @@
 </ul>
 <header>
   <div class="head">
-    <a href="/static/#"><img src="/static/index/img/img_01.png" /></a>
+<!--    <a href="/static/#"><img src="/static/index/img/img_01.png" /></a>-->
     <p>X</p>
   </div>
   <!--头部-->
@@ -54,9 +54,9 @@
         <a href="/static/#">
           <img src="/static/index/img/img_05.png" style="border-radius: 50%;"/>
           <!--<span class="glyphicon glyphicon-map-marker"></span>-->
-          北京</a>
+          广东</a>
         <div class="header_head_p_cs">
-          <a href="/static/#" style="background: #C81623;color: #fff;">北京</a>
+          <a href="/static/#" style="background: #C81623;color: #fff;">广东</a>
           <a href="/static/#">上海</a>
           <a href="/static/#">天津</a>
           <a href="/static/#">重庆</a>
@@ -158,10 +158,10 @@
     <nav>
       <ul>
         <li>
-          <a href="/static/#">秒杀</a>
+          <a href="/static/#" style="color: red">秒杀</a>
         </li>
         <li>
-          <a href="/static/#">优惠券</a>
+          <a href="/static/#" style="color: red">优惠券</a>
         </li>
         <li>
           <a href="/static/#">闪购</a>
@@ -501,7 +501,7 @@
     <p class="section_second_header_img"></p>
     <div class="section_second_header_left">
       <p></p>
-      <span class="">秒杀</span>
+      <span class="" >秒杀</span>
       <span>总有你想不到的低价</span>
       <span>
         </span>
@@ -610,6 +610,7 @@
   function search() {
     var keyword=$("#searchText").val()
     window.location.href="http://search.hahamall.com/list.html?keyword="+keyword;
+    // window.location.href="http://search.hahamall.com";
   }
 
 </script>
