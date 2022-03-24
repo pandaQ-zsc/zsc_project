@@ -111,9 +111,7 @@ public class LoginController {
 	 */
 	@PostMapping("/register")
 	public String register(@Valid UserRegisterVo vo, BindingResult result, RedirectAttributes redirectAttributes){
-
 		if(result.hasErrors()){
-
 			// 将错误属性与错误信息一一封装
 			Map<String, String> errors = result.getFieldErrors().stream().collect(Collectors.toMap(FieldError::getField, fieldError -> fieldError.getDefaultMessage()));
 			// addFlashAttribute 这个数据只取一次

@@ -7,18 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hahamall-common" />
         <module name="hahamall-member" />
+        <module name="hahamall-seckill" />
         <module name="hahamall-gateway" />
-        <module name="hahamall-search" />
         <module name="hahamall-product" />
         <module name="hahamall-order" />
         <module name="hahamall-third-party" />
-        <module name="renren-fast" />
         <module name="hahamall-coupon" />
-        <module name="hahamall-ware" />
         <module name="hahamall-auth-server" />
         <module name="renren-generator" />
+        <module name="hahamall-common" />
+        <module name="hahamall-search" />
+        <module name="renren-fast" />
+        <module name="hahamall-ware" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -31,6 +32,7 @@
       <module name="hahamall-order" target="1.8" />
       <module name="hahamall-product" target="1.8" />
       <module name="hahamall-search" target="1.8" />
+      <module name="hahamall-seckill" target="1.8" />
       <module name="hahamall-third-party" target="1.8" />
       <module name="hahamall-ware" target="1.8" />
       <module name="renren-fast" target="1.8" />
@@ -49,6 +51,7 @@
       <module name="hahamall-order" options="-parameters" />
       <module name="hahamall-product" options="-parameters" />
       <module name="hahamall-search" options="-parameters" />
+      <module name="hahamall-seckill" options="-parameters" />
       <module name="hahamall-third-party" options="-parameters" />
       <module name="hahamall-ware" options="-parameters" />
       <module name="renren-fast" options="-parameters" />
