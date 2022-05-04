@@ -1,5 +1,6 @@
 package com.zsc.hahamall.product.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.zsc.hahamall.product.entity.AttrEntity;
 import com.zsc.hahamall.product.service.AttrService;
 import com.zsc.hahamall.product.vo.AttrGroupWithAttrsVo;

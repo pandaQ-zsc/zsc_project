@@ -20,6 +20,7 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
+
         - id: counpon_route
           uri: lb://hahamall-coupon
           predicates:
@@ -70,6 +71,10 @@ spring:
           predicates:
             - Host=auth.hahamall.com
 
+        - id: hahamall_seckill_route
+          uri: lb://hahamall-seckill
+          predicates:
+            - Host=seckill.hahamall.com
 #            - RewritePath=/red/?(?<segment>.*), /$\{segment}
 #http://localhost:88/api/captcha.jpg   --> http://renren-fast:8080/api/captcha.jpg
 #但是实际上需要转化成  http://localhost:8080/renren-fast/captcha.jpg  因此需要添加【filters】去重写路径

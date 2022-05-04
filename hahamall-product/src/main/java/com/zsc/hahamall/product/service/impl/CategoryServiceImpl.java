@@ -137,6 +137,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         // 拿出来的是json字符串 还需要逆转成能用的对象类数据【序列化与反序列化】  、TypeReference是protected类型因此需要使用匿名内部类的形式创建出来传入。
         Map<String, List<Catalog2Vo>> result = JSON.parseObject(catalogJSON, new TypeReference<Map<String, List<Catalog2Vo>>>() {
         });
+       
         return result;
     }
 

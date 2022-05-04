@@ -10,7 +10,7 @@ import java.math.BigDecimal;
  * 2022/3/26
  */
 @Data
-public class SecKillSkuRedisTo {
+public class SeckillSkuRedisTo {
     private Long promotionId;
     /**
      * 活动场次id
