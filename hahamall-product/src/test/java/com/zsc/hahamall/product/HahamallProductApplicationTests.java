@@ -7,7 +7,6 @@ import com.zsc.hahamall.product.service.CategoryService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,31 +35,31 @@ public class HahamallProductApplicationTests {
     RedissonClient redisson;
 
     @Test
-    public void redisson(){
+    public void redisson() {
         System.out.println(redisson);
     }
 
     @Test
-    public void testStringRedisTemplate(){
+    public void testStringRedisTemplate() {
         //hello world
         ValueOperations<String, String> ops = stringRedisTemplate.opsForValue();
-        ops.set("hello","world_" + UUID.randomUUID().toString());
+        ops.set("hello", "world_" + UUID.randomUUID().toString());
         String hello = ops.get("hello");
-        System.out.println(hello );
+        System.out.println(hello);
 
     }
 
 
-
     @Test
-    public void testFindPath(){
+    public void testFindPath() {
         Long[] catelogPath = categoryService.findCatelogPath(225L);
         log.info("完整路径：{}", Arrays.asList(catelogPath));
     }
 
-
+//
 //    @Autowired
 //    OSSClient ossClient;
+
 //    @Test
 //    void testUpLoad() {
 //        // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
@@ -68,30 +67,30 @@ public class HahamallProductApplicationTests {
 //// 阿里云账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM用户进行API访问或日常运维，请登录RAM控制台创建RAM用户。
 //        String accessKeyId = "LTAI5tFJb89A4yKKZZNq558U";
 //        String accessKeySecret = "Q0w76qD0JayUKRgTZlf6asAyGFUGHV";
-
-// 创建OSSClient实例。
+//
+//// 创建OSSClient实例。
 //        OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
-
-// 创建PutObjectRequest对象。
-// 填写Bucket名称、Object完整路径和本地文件的完整路径。Object完整路径中不能包含Bucket名称。
-// 如果未指定本地路径，则默认从示例程序所属项目对应本地路径中上传文件。
+//
+//// 创建PutObjectRequest对象。
+//// 填写Bucket名称、Object完整路径和本地文件的完整路径。Object完整路径中不能包含Bucket名称。
+//// 如果未指定本地路径，则默认从示例程序所属项目对应本地路径中上传文件。
 //        PutObjectRequest putObjectRequest = new PutObjectRequest("hahamall-hello", "aunty.jpg", new File("C:\\Users\\xxx\\Pictures\\aunty.jpg"));
-
-// 如果需要上传时设置存储类型和访问权限，请参考以下示例代码。
-// ObjectMetadata metadata = new ObjectMetadata();
-// metadata.setHeader(OSSHeaders.OSS_STORAGE_CLASS, StorageClass.Standard.toString());
-// metadata.setObjectAcl(CannedAccessControlList.Private);
-// putObjectRequest.setMetadata(metadata);
-
-// 上传文件。
+//
+//// 如果需要上传时设置存储类型和访问权限，请参考以下示例代码。
+//        ObjectMetadata metadata = new ObjectMetadata();
+//        metadata.setHeader(OSSHeaders.OSS_STORAGE_CLASS, StorageClass.Standard.toString());
+//        metadata.setObjectAcl(CannedAccessControlList.Private);
+//        putObjectRequest.setMetadata(metadata);
+//
+//// 上传文件。
 //        ossClient.putObject(putObjectRequest);
-
-// 关闭OSSClient。
+//
+//// 关闭OSSClient。
 //        ossClient.shutdown();
 //    }
 
     @Test
-  public   void contextLoads() {
+    public void contextLoads() {
         BrandEntity brandEntity = new BrandEntity();
         brandEntity.setBrandId(1l);
         brandEntity.setDescript("华为！");

@@ -38,7 +38,7 @@ public class SysLogController {
 	 */
 	@ResponseBody
 	@GetMapping("/list")
-	@RequiresPermissions("sys:log:list")
+//	@RequiresPermissions("sys:log:list")
 	public R list(@RequestParam Map<String, Object> params){
 		PageUtils page = sysLogService.queryPage(params);
 

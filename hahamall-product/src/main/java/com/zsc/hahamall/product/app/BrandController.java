@@ -60,8 +60,14 @@ public class BrandController {
      * 保存
      */
     @RequestMapping("/save")
-    //@RequiresPermissions("product:brand:save")
-    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand /*,BindingResult result*/) {
+    public R save(@Validated(AddGroup.class) @RequestBody BrandEntity brand) {
+        brandService.save(brand);
+
+        return R.ok();
+    }
+//    @RequestMapping("/save")
+//    @RequiresPermissions("product:brand:save")
+//    public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand /*,BindingResult result*/) {
 //        if (result.hasErrors()) {
 //            Map<String, String> map = new HashMap<>();
 //            //检测校验结果
@@ -76,10 +82,10 @@ public class BrandController {
 //        } else {
 //            brandService.save(brand);
 //       }
-        brandService.save(brand);
+//        brandService.save(brand);
         //抛出异给exception统一处理
-        return R.ok();
-    }
+//        return R.ok();
+//    }
 
     /**
      * 修改

@@ -23,7 +23,7 @@ public class ListValueConstrainValidator implements ConstraintValidator<ListValu
 
     //判断是否校验成功
 
-    /**
+     /**
      *
      * @param value  需要校验的值。  也就是被注解@ListValue后变量的值
      * @param context

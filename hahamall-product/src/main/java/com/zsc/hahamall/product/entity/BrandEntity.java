@@ -2,10 +2,6 @@ package com.zsc.hahamall.product.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import java.io.Serializable;
-import java.util.Date;
-
 import com.zsc.common.valid.AddGroup;
 import com.zsc.common.valid.ListValue;
 import com.zsc.common.valid.UpdateGroup;
@@ -14,6 +10,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.*;
+import java.io.Serializable;
 
 /**
  * 品牌
@@ -52,7 +49,7 @@ public class BrandEntity implements Serializable {
     /**
      * 显示状态[0-不显示；1-显示]
      */
-    //@Pattern() --->有时候正则表达式不足以满足校验条件
+    //@Pattern() ---> 用于自定义校验规则。有时候正则表达式不足以满足校验条件
     @NotNull(groups = {AddGroup.class, UpdateStatusGroup.class})
     @ListValue(vals = {0, 1}, groups = {AddGroup.class, UpdateStatusGroup.class})
     private Integer showStatus;

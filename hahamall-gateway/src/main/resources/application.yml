@@ -13,6 +13,13 @@ spring:
         #lb代表 负载均衡  loadBalance   只要请求有api前缀的请求，默认路由到负载均衡renren-fast
         #自定义规则：前端的项目,/api前缀     uri 表示负载均衡到xx个服务
         # 配置商品路由：所有由/api/product/**请求开始的都路由到hahamall-product商品服务
+        - id: third_party_route
+          uri: lb://hahamall-third-party
+          predicates:
+            - Path=/api/thirdparty/**
+          filters:
+            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
+
         - id: product_route
           uri: lb://hahamall-product
           predicates:
@@ -20,18 +27,10 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
-
-        - id: counpon_route
+        - id: coupon_route
           uri: lb://hahamall-coupon
           predicates:
-            - Path=/api/thirdparty/**
-          filters:
-            - RewritePath=/api/thirdparty/(?<segment>.*),/$\{segment}
-
-        - id: third_route
-          uri: lb://hahamall-third-party
-          predicates:
-            - Path=/api/counpon/**
+            - Path=/api/coupon/**
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 

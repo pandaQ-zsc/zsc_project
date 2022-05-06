@@ -1,6 +1,7 @@
 package com.zsc.hahamall.hahamallthirdparty.controller;
 
 import com.aliyun.oss.OSS;
+import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.common.utils.BinaryUtil;
 import com.aliyun.oss.model.MatchMode;
 import com.aliyun.oss.model.PolicyConditions;
@@ -37,11 +38,11 @@ public class OssController {
         String host = "https://" + bucket + "." + endpoint; // host的格式为 bucketname.endpoint
         // callbackUrl为 上传回调服务器的URL，请将下面的IP和Port配置为您自己的真实信息。
 //        String callbackUrl = "http://88.88.88.88:8888";
-
         //上传时，指定日期
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 
-        String dir = "user-dir-prefix/"; // 用户上传文件时指定的前缀。
+//        String dir = "user-dir-prefix/"; // 用户上传文件时指定的前缀。
+        String  dir = date+"/";
         Map<String, String>  respMap = null;
         try {
             long expireTime = 30;
