@@ -22,7 +22,6 @@ public class WareOrderTaskDetailServiceImpl extends ServiceImpl<WareOrderTaskDet
                 new Query<WareOrderTaskDetailEntity>().getPage(params),
                 new QueryWrapper<WareOrderTaskDetailEntity>()
         );
-
         return new PageUtils(page);
     }
 

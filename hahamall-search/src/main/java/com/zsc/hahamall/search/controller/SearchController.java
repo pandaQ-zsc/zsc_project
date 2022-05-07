@@ -24,7 +24,6 @@ public class SearchController {
 
     @GetMapping("/list.html")
     public String listPage(SearchParam searchParam, Model model, HttpServletRequest request) {
-
         // 获取路径原生的查询属性
         searchParam.set_queryString(request.getQueryString());
         // ES中检索到的结果 传递给页面

@@ -38,6 +38,7 @@ public class SeckillScheduled {
         RLock lock = redissonClient.getLock(upload_lock);
         lock.lock(10, TimeUnit.SECONDS);
         try {
+        //上架最近三天参数秒杀活动商品信息
         seckillService.uploadSeckillSkuLatest3Days();
         }finally {
             lock.unlock();

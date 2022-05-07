@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 //@SpringBootTest
 public class HahamallCouponApplicationTests {
@@ -36,5 +37,6 @@ public class HahamallCouponApplicationTests {
 		String sqlStartTime = start.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		return sqlStartTime;
 	}
+
 
 }

@@ -1,6 +1,8 @@
 package com.zsc.hahamall.coupon.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import com.zsc.hahamall.coupon.service.SeckillPromotionService;
 import com.zsc.common.utils.PageUtils;
 import com.zsc.common.utils.R;
 
+import javax.xml.crypto.Data;
 
 
 /**
@@ -59,8 +62,10 @@ public class SeckillPromotionController {
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:seckillpromotion:save")
     public R save(@RequestBody SeckillPromotionEntity seckillPromotion){
+        seckillPromotion.setCreateTime(new Date());
+        seckillPromotion.setUserId(seckillPromotion.getUserId());
+        seckillPromotion.setEndTime(new Date());
 		seckillPromotionService.save(seckillPromotion);
-
         return R.ok();
     }
 

@@ -166,13 +166,13 @@ public class MallServiceImpl implements MallService {
 		TermsAggregationBuilder brand_agg = AggregationBuilders.terms("brand_agg");
 		brand_agg.field("brandId").size(50);
 		// 品牌聚合的子聚合
-		brand_agg.subAggregation(AggregationBuilders.terms("brand_name_agg").field("brandName").size(1));
-		brand_agg.subAggregation(AggregationBuilders.terms("brand_img_agg").field("brandImg").size(1));
+		brand_agg.subAggregation(AggregationBuilders.terms("brand_name_agg").field("brandName.keyword").size(1));
+		brand_agg.subAggregation(AggregationBuilders.terms("brand_img_agg").field("brandImg.keyword").size(1));
 		// 将品牌聚合加入 sourceBuilder
 		sourceBuilder.aggregation(brand_agg);
 		// TODO 2.分类聚合
 		TermsAggregationBuilder catalog_agg = AggregationBuilders.terms("catalog_agg").field("catalogId").size(20);
-		catalog_agg.subAggregation(AggregationBuilders.terms("catalog_name_agg").field("catalogName").size(1));
+		catalog_agg.subAggregation(AggregationBuilders.terms("catalog_name_agg").field("catalogName.keyword").size(1));
 		// 将分类聚合加入 sourceBuilder
 		sourceBuilder.aggregation(catalog_agg);
 		// TODO 3.属性聚合 attr_agg 构建嵌入式聚合
@@ -180,7 +180,7 @@ public class MallServiceImpl implements MallService {
 		// 3.1 聚合出当前所有的attrId
 		TermsAggregationBuilder attrIdAgg = AggregationBuilders.terms("attr_id_agg").field("attrs.attrId");
 		// 3.1.1 聚合分析出当前attrId对应的attrName
-		attrIdAgg.subAggregation(AggregationBuilders.terms("attr_name_agg").field("attrs.attrName").size(1));
+		attrIdAgg.subAggregation(AggregationBuilders.terms("attr_name_agg").field("attrs.attrName.keyword").size(1));
 		// 3.1.2 聚合分析出当前attrId对应的所有可能的属性值attrValue	这里的属性值可能会有很多 所以写50
 		attrIdAgg.subAggregation(AggregationBuilders.terms("attr_value_agg").field("attrs.attrValue").size(50));
 		// 3.2 将这个子聚合加入嵌入式聚合

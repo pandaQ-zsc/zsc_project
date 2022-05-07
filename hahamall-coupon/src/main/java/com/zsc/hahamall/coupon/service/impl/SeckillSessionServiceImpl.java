@@ -43,11 +43,6 @@ public class SeckillSessionServiceImpl extends ServiceImpl<SeckillSessionDao, Se
 
     @Override
     public List<SeckillSessionEntity> getLatest3DaySession() {
-        //最近三天
-        LocalDate now = LocalDate.now();
-        LocalDate plus = now.plus(Duration.ofDays(1));
-        LocalDate plus2 = now.plus(Duration.ofDays(2));
-//        return null;
         List<SeckillSessionEntity> list = this.list(new QueryWrapper<SeckillSessionEntity>().between("start_time", startTime(), endTime()));
         if(list!= null && list.size() > 0){
             List<SeckillSessionEntity> collect = list.stream().map(session -> {
@@ -67,6 +62,7 @@ public class SeckillSessionServiceImpl extends ServiceImpl<SeckillSessionDao, Se
         String sqlStartTime = start.format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
         return sqlStartTime;
     }
+
     public String endTime(){
         LocalDate now = LocalDate.now();
         LocalDate now2 = now.plusDays(2);

@@ -5954,7 +5954,8 @@ Cookie</span>是由网页服务器存放在您的访问设备上的文本文件�
     </div>
 </header>
 <section>
-    <form action="/register" method="POST" class="one">
+<!--    <form action="/register" method="POST" class="one">-->
+    <form action="/login.html" method="get" class="one">
         <div class="tips" style="color: red"
              th:text="${errors!=null? (#maps.containsKey(errors, 'msg')?errors.msg:''):''}">
 
@@ -6014,7 +6015,7 @@ Cookie</span>是由网页服务器存放在您的访问设备上的文本文件�
             </div>
             <br/>
             <div class="submit_btn">
-                <button type="submit" id="submit_btn" ><a href="http://auth.hahamall.com/login.html">立 即 注 册</a></button>
+                <button type="submit" id="submit_btn" ><a style="color: white" href="http://auth.hahamall.com/login.html">立 即 注 册</a></button>
 <!--                <a href="http://auth.hahamall.com/login.html"><button type="submit" id="submit_btn" th:href="">立 即 注 册</button></a>-->
             </div>
         </div>

@@ -26,6 +26,7 @@ import com.zsc.common.utils.R;
 public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
+
     @GetMapping("/latest3DaySession")
     public R getLatest3DaySession(){
         List<SeckillSessionEntity> sessions = seckillSessionService.getLatest3DaySession();
