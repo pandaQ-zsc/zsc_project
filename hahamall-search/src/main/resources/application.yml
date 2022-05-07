@@ -1,3 +1,4 @@
+ipAddr: 192.168.184.132
 spring:
   application:
     name: hahamall-search
@@ -11,5 +12,7 @@ spring:
     store-type: redis
   redis:
     host: ${ipAddr}
+  cache:
+    type: redis
 server:
   port: 12000

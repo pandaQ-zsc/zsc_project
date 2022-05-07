@@ -28,10 +28,8 @@ public class ProductSaveServiceImpl implements ProductSaveService {
     public boolean productStatusUp(List<SkuEsModel> skuEsModels) throws IOException {
         //保存到es
         //1、给es中建立索引，product-mapping.txt。简历好映射关系
-
-
-        //2、给es中保存这些数据
         BulkRequest bulkRequest = new BulkRequest();
+        //2、给es中保存这些数据
         for (SkuEsModel model : skuEsModels) {
             //1、构造保存请求
             IndexRequest indexRequest = new IndexRequest(EsConstant.PRODUCT_INDEX);

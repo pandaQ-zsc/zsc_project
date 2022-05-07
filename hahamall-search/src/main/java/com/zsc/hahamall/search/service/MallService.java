@@ -2,12 +2,14 @@ package com.zsc.hahamall.search.service;
 
 import com.zsc.hahamall.search.vo.SearchParam;
 import com.zsc.hahamall.search.vo.SearchResult;
+import org.springframework.stereotype.Service;
 
 /**
  * <p>Title: MasllService</p>
  * Description：
  * date：2021/6/12 23:05
  */
+
 public interface MallService {
 
 	/**
