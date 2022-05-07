@@ -1,19 +1,22 @@
 package com.zsc.hahamall.order.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.math.BigDecimal;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 
 /**
  * 订单
- * 
- * @author zsc_xq
- * @email zsc_xq@gmail.com
- * @date 2021-05-20 11:03:12
+ *
+ * @author firenay
+ * @email 1046762075@qq.com
+ * @date 2020-05-30 00:54:56
  */
 @Data
 @TableName("oms_order")
@@ -190,4 +193,6 @@ public class OrderEntity implements Serializable {
 	 */
 	private Date modifyTime;
 
+	@TableField(exist = false)
+	private List<OrderItemEntity> itemEntities;
 }
