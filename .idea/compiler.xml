@@ -11,6 +11,7 @@
         <module name="hahamall-seckill" />
         <module name="hahamall-gateway" />
         <module name="hahamall-product" />
+        <module name="auth" />
         <module name="hahamall-order" />
         <module name="hahamall-third-party" />
         <module name="hahamall-coupon" />
@@ -23,6 +24,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="auth" target="1.8" />
       <module name="hahamall-auth-server" target="1.8" />
       <module name="hahamall-common" target="1.8" />
       <module name="hahamall-coupon" target="1.8" />
@@ -42,6 +44,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="auth" options="-parameters" />
       <module name="hahamall-auth-server" options="-parameters" />
       <module name="hahamall-common" options="" />
       <module name="hahamall-coupon" options="-parameters" />
