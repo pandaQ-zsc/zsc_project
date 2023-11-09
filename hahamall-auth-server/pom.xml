@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.zsc.hahamall</groupId>
-	<artifactId>auth</artifactId>
+	<artifactId>hahamall-auth-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>hahamall-auth-server</name>
 	<description>认证中心（社交登录、OAuth2.0、单点登录）</description>
@@ -40,7 +40,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.zsc.hahamall</groupId>
-			<artifactId>hahamall_common</artifactId>
+			<artifactId>hahamall-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>

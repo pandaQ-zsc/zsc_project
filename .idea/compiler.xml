@@ -7,11 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hahamall-member" />
         <module name="hahamall-seckill" />
+        <module name="hahamall-member" />
         <module name="hahamall-gateway" />
         <module name="hahamall-product" />
-        <module name="auth" />
         <module name="hahamall-order" />
         <module name="hahamall-third-party" />
         <module name="hahamall-coupon" />
@@ -25,26 +24,16 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="auth" target="1.8" />
-      <module name="hahamall-auth-server" target="1.8" />
-      <module name="hahamall-common" target="1.8" />
-      <module name="hahamall-coupon" target="1.8" />
-      <module name="hahamall-gateway" target="1.8" />
-      <module name="hahamall-member" target="1.8" />
+      <module name="demo" target="1.8" />
       <module name="hahamall-member1" target="1.8" />
-      <module name="hahamall-order" target="1.8" />
-      <module name="hahamall-product" target="1.8" />
-      <module name="hahamall-search" target="1.8" />
-      <module name="hahamall-seckill" target="1.8" />
-      <module name="hahamall-third-party" target="1.8" />
-      <module name="hahamall-ware" target="1.8" />
-      <module name="renren-fast" target="1.8" />
-      <module name="renren-generator" target="1.8" />
+      <module name="hahamall_common" target="1.8" />
       <module name="zsc_project" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="auth" options="-parameters" />
+      <module name="demo" options="-parameters" />
       <module name="hahamall-auth-server" options="-parameters" />
       <module name="hahamall-common" options="" />
       <module name="hahamall-coupon" options="-parameters" />

@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>com.zsc.hahamall</groupId>
-            <artifactId>hahamall_common</artifactId>
+            <artifactId>hahamall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
